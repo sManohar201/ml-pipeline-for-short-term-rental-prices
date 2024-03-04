@@ -32,8 +32,8 @@ def go(args):
     df['last_review'] = pd.to_datetime(df['last_review'])
     
     # leave out the rows that are not in the exact geolocation
-    # idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
-    # df = df[idx].copy()
+    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    df = df[idx].copy()
 
     logger.info("saving the output artifact")
     filename = "clean_sample.csv"
