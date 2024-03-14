@@ -32,7 +32,7 @@ def go(args):
     df['last_review'] = pd.to_datetime(df['last_review'])
 
     # leave out the rows that are not in the exact geolocation
-    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    idx = df['longitude'].between(args.long_min, args.long_max) & df['latitude'].between(args.lat_min, args.lat_max)
     df = df[idx].copy()
 
     logger.info("saving the output artifact")

@@ -59,7 +59,11 @@ def go(config: DictConfig):
                         "output_type": "clean_sample",
                         "output_description": "Data with outliers and null values removed",
                         "min_price": config['etl']['min_price'],
-                        "max_price": config['etl']['max_price']
+                        "max_price": config['etl']['max_price'],
+                        "long_min": config['etl']['long_min'],
+                        "long_max": config['etl']['long_max'],
+                        "lat_min": config['etl']['lat_min'],
+                        "lat_max": config['etl']['lat_max']
                     },
             )
 
